@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
             header("Location:" . $_SERVER['HTTP_REFERER']);
         }
     } else {
-        Alert('Зарплата должна быть числом');
+        Alert('Внимание!!! Зарплата должна быть числом.');
     }
 }
 
@@ -49,7 +49,7 @@ if (isset($_POST['edit'])) {
             header("Location:" . $_SERVER['HTTP_REFERER']);
         }
     } else {
-        Alert('Зарплата должна быть числом');
+        Alert('Внимание!!! Зарплата должна быть числом.');
     }
 }
 
