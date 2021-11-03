@@ -1,45 +1,47 @@
 <?php
 
-   include "func.php";
+include "func_table1.php";
 
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>CRUD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>USERS</title>
 </head>
 <body>
+<a href="../table2/main_table2.php" class="btn btn-primary btn-sm">Перейти к таблице работников</a>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-striped table-hover mt-2">
-                 <thead class="thead-dark">
-                 <th>id</th>
-                 <th>Имя</th>
-                 <th>Фамилия</th>
-                 <th>Дата рождения</th>
-                 <th>Образование</th>
-                 <th>Должность</th>
-                 <th>Зарплата</th>
-                 <th>Действия</th>
-                 </thead>
-                <tbody>
-                <?php foreach ($result as $value){ ?>
-                        <tr>
-                <td><?= $value->id ?></td>
-                <td><?= $value->name ?></td>
-                <td><?= $value->last_name ?></td>
-                <td><?= $value->birthday ?></td>
-                <td><?= $value->education ?></td>
-                <td><?= $value->position ?></td>
-                <td><?= $value->salary ?></td>
-                                <td><a href="?id=<?= $value->id ?>" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit<?= $value->id ?>">Редактировать</a>
-                                    <a href="?id=<?= $value->id ?>" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $value->id ?>">Удалить</a></td>
-                        </tr>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped table-hover mt-2">
+            <thead class="thead-dark">
+            <th>id</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Email</th>
+            <th>Пароль</th>
+             <th>Действия</th>
+            </thead>
+            <tbody>
+            <?php foreach ($result1 as $value){ ?>
+                <tr>
+                    <td><?= $value->id ?></td>
+                    <td><?= $value->name ?></td>
+                    <td><?= $value->last_name ?></td>
+                    <td><?= $value->email ?></td>
+                    <td><?= $value->password ?></td>
+
+
+                    <td><a href="?id=<?= $value->id ?>" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit<?= $value->id ?>">Редактировать</a>
+                        <a href="?id=<?= $value->id ?>" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $value->id ?>">Удалить</a></td>
+                </tr>
 
                 <!--Окно на редактирование данных-->
                 <div class="modal fade" id="edit<?= $value->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,17 +60,12 @@
                                         <input type="text" class="form-control" name="last_name" value="<?= $value->last_name ?>">
                                     </div>
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="birthday" value="<?= $value->birthday ?>">
+                                        <input type="date" class="form-control" name="email" value="<?= $value->email ?>">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="education" value="<?= $value->education ?>" >
+                                        <input type="text" class="form-control" name="password" value="<?= $value->password ?>" >
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="position" value="<?= $value->position ?>" >
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="salary" value="<?= $value->salary ?>">
-                                    </div>
+
 
                             </div>
                             <div class="modal-footer">
@@ -78,33 +75,32 @@
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
 
-                    <!--Окно на удаление данных-->
-                    <div class="modal fade" id="delete<?=$value->id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Вы точно хотите удалить запись №<?=$value->id?>  </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-footer">
-                                    <form action="?id=<?= $value->id ?>" method="post">
+                <!--Окно на удаление данных-->
+                <div class="modal fade" id="delete<?=$value->id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Вы точно хотите удалить запись №<?=$value->id?>  </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="?id=<?= $value->id ?>" method="post">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
                                     <button type="submit" name="delete" class="btn btn-primary">Удалить</button>
-                                    </form>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-               <?php } ?>
-                </tbody>
-            </table>
-            <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#create">Добавить</button>
-        </div>
-   </div>
+                </div>
+            <?php } ?>
+            </tbody>
+        </table>
+        <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#create">Добавить</button>
+    </div>
 </div>
-
+</div>
 <!-- Окно на добавление данных -->
 <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -124,23 +120,14 @@
                         <input type="text" class="form-control" name="last_name" value=""/>
                     </div>
                     <div class="form-group">
-                        <p>Введите дату рождения</p>
-                        <input type="date" class="form-control" name="birthday" value=""/>
+                        <p>Введите Email</p>
+                        <input type="text" class="form-control" name="email" value=""/>
                     </div>
                     <div class="form-group">
-                        <p>Введите образование</p>
-                        <input type="text" class="form-control" name="education" value=""/>
+                        <p>Введите пароль</p>
+                        <input type="text" class="form-control" name="password" value=""/>
                     </div>
-                    <div class="form-group">
-                        <p>Введите должность</p>
-                        <input type="text" class="form-control" name="position" value=""/>
                     </div>
-                    <div class="form-group">
-                        <p>Введите зарплату</p>
-                        <input type="text" class="form-control" name="salary" value="" />
-                    </div>
-
-            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
                 <button type="submit" name="submit" class="btn btn-primary">Сохранить</button>
@@ -149,6 +136,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

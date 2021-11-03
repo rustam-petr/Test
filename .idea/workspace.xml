@@ -45,6 +45,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer2021\domains\Test\table1" />
+      <recent name="C:\OpenServer2021\domains\Test\table2" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +61,7 @@
       <updated>1635668375588</updated>
       <workItem from="1635668380257" duration="31686000" />
       <workItem from="1635925037217" duration="6924000" />
+      <workItem from="1635964897583" duration="10637000" />
     </task>
     <servers />
   </component>

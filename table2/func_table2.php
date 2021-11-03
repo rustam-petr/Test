@@ -1,7 +1,7 @@
 <?php
 
-include 'config.php';
-include 'script.php';
+include '../config.php';
+include '../script.php';
 
 
 // Создание новой записи
