@@ -122,7 +122,7 @@
                         <input type="text" class="form-control" name="last_name" value="" placeholder="Фамилия"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="birthday" value="" placeholder="Дата рождения"/>
+                        <input type="text" class="form-control" name="birthday" value="" placeholder="Дата рождения год/месяц/число"/>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="education" value="" placeholder="Образование"/>

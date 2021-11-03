@@ -13,6 +13,16 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -44,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635668375588</updated>
       <workItem from="1635668380257" duration="31686000" />
+      <workItem from="1635925037217" duration="5329000" />
     </task>
     <servers />
   </component>

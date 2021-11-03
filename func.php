@@ -1,9 +1,11 @@
 <?php
 
 include 'config.php';
+include 'script.php';
 
 
 // Создание новой записи
+
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $last_name = $_POST['last_name'];
@@ -19,11 +21,8 @@ if (isset($_POST['submit'])) {
             header("Location:" . $_SERVER['HTTP_REFERER']);
         }
     } else {
-        echo "Зарплата должна быть числом!!!";
+        Alert('Зарплата должна быть числом');
     }
-//    if ($query) {
-//        header("Location:" . $_SERVER['HTTP_REFERER']);
-//    }
 }
 
 // Чтение данных из таблицы
@@ -42,13 +41,16 @@ if (isset($_POST['edit'])) {
     $position = $_POST['position'];
     $salary = $_POST['salary'];
     $get_id = $_GET["id"];
-    $sql = ("UPDATE employees SET name=?, Last_name=?,birthday=?,education=?,position=?,salary=? WHERE id=?");
-    $query = $pdo->prepare($sql);
-    $query->execute([$name, $last_name, $birthday, $education, $position, $salary, $get_id]);
-    if ($query) {
-        header("Location:" . $_SERVER['HTTP_REFERER']);
+    if (is_numeric($salary)) {
+        $sql = ("UPDATE employees SET name=?, Last_name=?,birthday=?,education=?,position=?,salary=? WHERE id=?");
+        $query = $pdo->prepare($sql);
+        $query->execute([$name, $last_name, $birthday, $education, $position, $salary, $get_id]);
+        if ($query) {
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
+    } else {
+        Alert('Зарплата должна быть числом');
     }
-
 }
 
 // Удаление данных
