@@ -58,7 +58,7 @@
                                         <input type="text" class="form-control" name="last_name" value="<?= $value->last_name ?>">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="birthday" value="<?= $value->birthday ?>">
+                                        <input type="date" class="form-control" name="birthday" value="<?= $value->birthday ?>">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="education" value="<?= $value->education ?>" >
@@ -116,22 +116,28 @@
             <div class="modal-body">
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" value="" placeholder="Имя"/>
+                        <p>Введите имя</p>
+                        <input type="text" class="form-control" name="name" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="last_name" value="" placeholder="Фамилия"/>
+                        <p>Введите фамилию</p>
+                        <input type="text" class="form-control" name="last_name" value=""/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="birthday" value="" placeholder="Дата рождения год/месяц/число"/>
+                        <p>Введите дату рождения</p>
+                        <input type="date" class="form-control" name="birthday" value=""/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="education" value="" placeholder="Образование"/>
+                        <p>Введите образование</p>
+                        <input type="text" class="form-control" name="education" value=""/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="position" value="" placeholder="Должность"/>
+                        <p>Введите должность</p>
+                        <input type="text" class="form-control" name="position" value=""/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="salary" value="" placeholder="Зарплата"/>
+                        <p>Введите зарплату</p>
+                        <input type="text" class="form-control" name="salary" value="" />
                     </div>
 
             </div>
