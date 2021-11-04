@@ -2,6 +2,7 @@
 
 include "func_table1.php";
 
+
 ?>
 
 <!doctype html>
@@ -30,7 +31,7 @@ include "func_table1.php";
              <th>Действия</th>
             </thead>
             <tbody>
-            <?php foreach ($result1 as $value){ ?>
+            <?php foreach ($resultUsers as $value){ ?>
                 <tr>
                     <td><?= $value->id ?></td>
                     <td><?= $value->name ?></td>
@@ -60,7 +61,7 @@ include "func_table1.php";
                                         <input type="text" class="form-control" name="last_name" value="<?= $value->last_name ?>">
                                     </div>
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="email" value="<?= $value->email ?>">
+                                        <input type="text" class="form-control" name="email" value="<?= $value->email ?>">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="password" value="<?= $value->password ?>" >

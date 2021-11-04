@@ -15,7 +15,7 @@
         <div class="col">
         </div>
         <div class="col">
-            <form action="table1/main_table1.php" method="post">
+            <form action="table2/main_table2.php" method="post">
                 <div class="mb-3">
                     <p><h5>Для входа необходимо пройти авторизацию.</h5></p>
                     <label for="exampleInputEmail1" class="form-label">Email address</label>

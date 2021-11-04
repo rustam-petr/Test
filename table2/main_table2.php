@@ -1,6 +1,26 @@
 <?php
+include "../config.php";
+include "func_table2.php";
 
-   include "func_table2.php";
+
+
+$qvuery = ("SELECT COUNT(*) FROM `users` WHERE email= ? and password= ? and is_blocked= ?");
+
+$query = $pdo->prepare($qvuery);
+$query->execute([$_POST['email'], $_POST['pass'], 0]);
+$a = $query->fetchColumn();
+
+
+if($a>0) {
+
+    Alert('Вы авторизировались!!!');
+
+}
+//} else{
+//    Alert('Вы должны быть авторизированы!!!');
+//
+//}
+
 
 ?>
 
@@ -13,7 +33,7 @@
     <title>CRUD</title>
 </head>
 <body>
-<a href="../index1.php" class="btn btn-primary btn-sm">Перейти к таблице пользователи</a>
+<a href="../table1/main_table1.php" class="btn btn-primary btn-sm">Перейти к таблице пользователи</a>
 <div class="container">
     <div class="row">
         <div class="col-12">
