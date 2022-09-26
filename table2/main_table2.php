@@ -116,6 +116,8 @@ if($a>0) {
                                     </form>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                <?php } ?>
@@ -125,7 +127,6 @@ if($a>0) {
         </div>
    </div>
 </div>
-
 <!-- Окно на добавление данных -->
 <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
